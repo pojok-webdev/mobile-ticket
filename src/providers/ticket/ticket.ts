@@ -26,6 +26,19 @@ export class TicketProvider {
       }
     )
   }
+  public removeTicket(obj,callback){
+    this.objs = this.http.get('http://'+this.appvar.server.host+':'+this.appvar.server.port+'/deleteticket/'+obj.kdticket)
+    this.objs.subscribe(
+      data => {
+        console.log("Sukses delete ticket",data)
+        callback(data)
+      },
+      err => {
+        console.log("Unsuccess delete ticket",err)
+        callback(err)
+      }
+    )
+  }
   searchTicket(obj,callback){
     this.objs = this.http.post<any[]>('http://'+this.appvar.server.host+':'+this.appvar.server.port+'/searchtickets/',obj)
     this.objs.subscribe(
