@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AppvarProvider {
   server = {
-    host:'localhost',
+    host:'192.168.0.117',
     port:'2000'
   }
   constructor(public http: HttpClient) {
