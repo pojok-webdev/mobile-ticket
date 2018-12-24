@@ -10,15 +10,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TicketProvider } from '../providers/ticket/ticket';
 import { HttpClient,HttpClientModule } from '@angular/common/http';
-import { SettingPage } from '../pages/setting/setting';
 import { AppvarProvider } from '../providers/appvar/appvar';
+import { RemoveConfirmationComponent } from '../components/remove-confirmation/remove-confirmation';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
-    SettingPage
+    ListPage,RemoveConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +28,7 @@ import { AppvarProvider } from '../providers/appvar/appvar';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
-    SettingPage
+    ListPage,RemoveConfirmationComponent
   ],
   providers: [
     StatusBar,

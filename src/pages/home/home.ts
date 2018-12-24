@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
 import { TicketProvider } from '../../providers/ticket/ticket';
+import { RemoveConfirmationComponent } from '../../components/remove-confirmation/remove-confirmation';
 
 @Component({
   selector: 'page-home',
@@ -10,12 +11,17 @@ export class HomePage {
   objs
   constructor(
     public navCtrl: NavController,
-    public ticket: TicketProvider
+    public ticket: TicketProvider,
+    public modal: ModalController
   ) {
     this.ticket.getTickets(result => {
       console.log('Result',result)
       this.objs = result
     })
+  }
+  openModal(event,item){
+    let modal = this.modal.create(RemoveConfirmationComponent)
+    modal.present()
   }
   clickOption(){
     console.log("Item clicked")

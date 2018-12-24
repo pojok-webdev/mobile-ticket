@@ -21,6 +21,7 @@
         <ion-option value="futicket" (ionSelect)="doAction($event)">Follow Up Ticket</ion-option>
         <ion-option value="closeticket" (ionSelect)="doAction($event)">Tutup Ticket</ion-option>
         <ion-option value="removeticket" (ionSelect)="doAction($event,item)">Remove Ticket</ion-option>
+        <ion-option value="removeticket" (ionSelect)="openModal($event,item)">Show Modal</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
